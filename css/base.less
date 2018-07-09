@@ -18,6 +18,11 @@
   src: url('../fonts/Oswald-Regular.ttf');
 }
 
+body{
+  margin: 0;
+  padding: 0;
+}
+
 html{
   font-family: Lato Regular;
   font-size: 62.5%;
@@ -25,6 +30,10 @@ html{
 
 .red{
   color: red;
+}
+
+.t-italic{
+  font-style: italic;
 }
 
 a{
@@ -41,6 +50,8 @@ a{
 
 .header-wrapper{
   background: #202628;
+  float: left;
+  width: 100%;
 }
 
 .header{
@@ -97,12 +108,91 @@ a{
 .banner{
   background: url("../images/fone.png");
   height: 560px;
+  float: left;
+  width: 100%;
+  position: relative;
+
+  .banner__info-wrapper{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  .banner__info{
+    bottom: 0;
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+
+    .info__btn-pnl{
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      background: red;
+
+      .btn-wrapper{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .btn-pnl-btn{
+        padding: 0;
+        margin: 0;
+        border: none;
+        font-size: 2.5rem;
+        background: red;
+      }
+
+    }
+
+    .info__text{
+      width: 500px;
+      font-family: FjallaOne;
+      font-size: 3.1rem;
+      color: white;
+      text-transform: uppercase;
+      margin-top: 25px;
+      letter-spacing: 2px;
+
+      .info__text-one-wrapper{
+        display: flex;
+      }
+
+      .info__text-one{
+        display: inline-block;
+      }
+
+      .info__text-one:first-child{
+        flex-grow: 0;
+      }
+
+      .info__text-one:last-child{
+        flex-grow: 1;
+        padding: 0px 44px 0px 19px;
+      }
+
+      .info__text-two{
+        padding-top: 8px;
+      }
+
+      .info__text-href a{
+        color: red;
+        font-size: 1.5rem;
+        text-transform: none;
+      }
+    }
+  }
 }
 
 .footer-wrapper{
   background: #202628;
   padding-top: 80px;
   height: 125px;
+  float: left;
+  width: 100%;
 }
 
 .footer{
@@ -130,7 +220,7 @@ a{
       border-radius: 50%;
       background: #e85241;
       float: left;
-      margin: 0 5px 0 5px;
+      margin: 0 4px 0 3px;
     }
 
     .footer-icon:first-child{
@@ -171,13 +261,14 @@ a{
 
     .navigation-footer__item{
       float: left;
+      letter-spacing: 1px;
     }
 
     .navigation-footer__item a{
-      padding: 0 10px 0 10px;
+      padding: 0 13px 0 13px;
     }
 
-    .navigation-footer__item a:first-child{
+    .navigation-footer__item:first-child a{
       padding-left: 0;
     }
 
@@ -192,7 +283,7 @@ a{
 
   .add-info{
     font-size: 1.4rem;
-    margin-top: 20px;
+    margin-top: 13px;
   }
 
 }
@@ -201,18 +292,28 @@ a{
 .content-one-wrapper{
   background: #e7e7e7;
   height: 280px;
+  float: left;
+  width: 100%;
 
   .content-one{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
-    align-items: center;
     height: 100%;
+    padding: 80px 15px 50px 15px;
+
+    .empty-block{
+      flex-grow: 0;
+      width: 30px;
+      min-width: 30px;
+      max-width: 30px;
+    }
 
     .info-block{
       flex-grow: 1;
       display: flex;
       flex-direction: row;
+      width: 33%;
 
       .info-block__logo{
         width: 70px;
@@ -250,12 +351,13 @@ a{
 
       .info-block__text-pnl{
         flex-grow: 1;
-        padding: 0 30px 0 30px;
 
         .info-block__text-pnl__header{
           font-family: FjallaOne;
           font-weight: bold;
           font-size: 2.1rem;
+          text-transform: uppercase;
+          letter-spacing: 1.7px;
         }
 
         .info-block__text-pnl__content{
@@ -271,6 +373,8 @@ a{
 
 .content-two-wrapper {
   background: white;
+  float: left;
+  width: 100%;
 
   .content-two {
     display: flex;
@@ -279,7 +383,7 @@ a{
     align-items: center;
     justify-content: space-around;
     height: 100%;
-    padding: 80px 15px 80px 15px;
+    padding: 70px 15px 80px 15px;
 
     .content-two__info-pnl {
       flex-grow: 1;
@@ -289,6 +393,8 @@ a{
         font-family: FjallaOne;
         font-size: 2.1rem;
         font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 1px;
       }
 
       .content-two__info-pnl__header-two {
@@ -299,7 +405,7 @@ a{
       }
 
       .content-two__info-pnl__news-pnl {
-        margin-top: 30px;
+        margin-top: 20px;
         display: flex;
 
         .empty-block {
@@ -330,7 +436,8 @@ a{
         .news-block__button {
           font-family: "Oswald regular";
           font-size: 1.4rem;
-          margin-top: 40px;
+          margin-top: 35px;
+          padding-left: 10px;
 
           input[type=button] {
             padding: 10px 15px 10px 15px;
@@ -361,6 +468,360 @@ a{
         height: 355px;
         border-radius: 50%;
       }
+    }
+  }
+
+
+  .content-three{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0px 15px 60px 15px;
+
+    .mail-pnl{
+      height: 190px;
+      width: 100%;
+      background: red;
+      border-radius: 10px;
+
+      display: flex;
+      flex-direction: row;
+
+      .mail-pnl__testimonial{
+        flex-grow: 1;
+        display: flex;
+        width: 50%;
+
+        .avater-pnl{
+          flex: 0 1 auto;
+          width: 100px;
+          min-width: 100px;
+          align-self: stretch;
+          flex-direction: row-reverse;
+          display: flex;
+
+
+          .avater-pnl__avatar-img{
+            background: black;
+            border-radius: 50%;
+            align-self: center;
+            width: 70px;
+            height: 70px;
+            display: flex;
+
+            .img{
+              align-self: center;
+              margin: 0 auto;
+            }
+          }
+        }
+
+        .testimonial-info{
+          flex-grow: 1;
+          align-self: center;
+          padding-left: 30px;
+          box-sizing: border-box;
+
+          .testimonial-info__header{
+            font-family: FjallaOne;
+            font-size: 2.1rem;
+            color: white;
+            text-transform: uppercase;
+          }
+
+          .testimonial-info__content{
+            padding-top: 20px;
+            font-size: 1.6rem;
+            color: white;
+          }
+        }
+
+      }
+
+      .empty-block{
+        flex-grow: 0;
+        width: 30px;
+        min-width: 30px;
+      }
+
+      .mail-pnl__mail-subscribe{
+        flex-grow: 1;
+        align-self: center;
+        box-sizing: border-box;
+        width: 50%;
+        padding-left: 30px;
+
+        .mail-subscribe__header{
+          font-family: FjallaOne;
+          font-size: 2.1rem;
+          color: white;
+          text-transform: uppercase;
+        }
+
+        .mail-subscribe__content{
+          padding-top: 20px;
+          display: flex;
+
+          .mail-subscribe__mail-input{
+            width: 380px;
+            border-radius: 20px;
+            border: none;
+            padding: 10px 15px 10px 15px;
+            box-sizing: border-box;
+          }
+
+          .mail-subscribe__mail-input::placeholder{
+            font-style: italic;
+            color: grey;
+          }
+
+          .mail-subscribe__mail-button{
+            font-family: FjallaOne;
+            font-size: 1.5rem;
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            margin-left: 10px;
+            width: 125px;
+            text-transform: uppercase;
+            height: 100%;
+          }
+
+          .mail-subscribe__mail-button:hover{
+            cursor: pointer;
+          }
+
+          .mail-subscribe__mail-label{
+            position: relative;;
+          }
+
+          .mail-subscribe__mail-label:hover{
+            cursor: pointer;
+          }
+
+          .mail-subscribe__mail-label:after{
+            content: '\2192';
+            color: white;
+            position: absolute;
+            top: 10px;
+            right: 8px;
+            font-size: 1.4rem;
+          }
+        }
+      }
+    }
+
+
+    .column-pnl{
+      display: flex;
+      padding-top: 64px;
+
+      .empty-pnl{
+        flex-grow: 0;
+        width: 30px;
+        min-width: 30px;
+      }
+
+      .column-pnl__news-pnl{
+        flex-grow: 1;
+
+        display: flex;
+        flex-direction: column;
+        width: 33%;
+
+        .news-pnl__header{
+          font-family: FjallaOne;
+          font-size: 2.1rem;
+          text-transform: uppercase;
+          font-weight: bold;
+          padding-bottom: 25px;
+          letter-spacing: 1px;
+        }
+
+        .news-pnl__item{
+          display: flex;
+          border-top: 1px solid grey;
+          padding: 25px 0px 30px 0px;
+
+
+          .empty-pnl{
+            width: 30px;
+            min-width: 30px;
+            flex-grow: 0;
+          }
+
+          .item__avatar{
+            flex-grow: 0;
+            width: 70px;
+            align-self: stretch;
+          }
+
+          .item__info{
+            flex-grow: 1;
+
+            font-size: 1.4rem;
+            color: #767c7e;
+            letter-spacing: 0.6px;
+            line-height: 1.7;
+            padding-top: 10px;
+          }
+        }
+
+        .news-pnl__item:last-child{
+          border-bottom: 1px solid grey;
+        }
+      }
+
+      .column-pnl__query-pnl{
+        flex-grow: 1;
+
+        display: flex;
+        flex-direction: column;
+        width: 33%;
+
+        .query-pnl__header{
+          flex-grow: 0;
+
+          font-family: FjallaOne;
+          font-size: 2.1rem;
+          text-transform: uppercase;
+          font-weight: bold;
+          padding-bottom: 25px;
+          letter-spacing: 1px;
+        }
+
+        .query-pnl__send-form{
+          flex-grow: 1;
+          align-self: stretch;
+          background: #e7e7e7;
+          border-radius: 5px;
+          padding: 25px 30px;
+
+          display: flex;
+          flex-direction: column;
+
+          .send-form__header{
+            font-size: 1.4rem;
+            color: #767c7e;
+            letter-spacing: 0.6px;
+            line-height: 1.7;
+            padding-bottom: 26px;
+          }
+
+          .send-form__input-wrapper{
+            padding-bottom: 20px;
+          }
+
+          .send-form__input{
+            width: 100%;
+            border-radius: 20px;
+            border: none;
+            padding: 12px 10px 13px 14px;
+            box-sizing: border-box;
+          }
+
+          .send-form__text-area{
+            border-radius: 10px;
+            height: 82px;
+          }
+
+          .send-form__input::placeholder{
+            font-style: italic;
+            color: grey;
+          }
+
+          .send-form__send-btn-label{
+            position: relative;
+          }
+
+          .send-form__send-btn{
+            font-family: FjallaOne;
+            font-size: 1.5rem;
+            background: red;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            width: 100px;
+            text-transform: uppercase;
+            height: 40px;
+            padding: 10px 20px 10px 20px;
+            text-align: left;
+          }
+
+          .send-form__send-btn-label:after{
+            content: '\2192';
+            color: white;
+            position: absolute;
+            top: -5px;
+            right: 21px;
+            font-size: 1.4rem;
+          }
+        }
+      }
+
+      .column-pnl__contact-pnl{
+        flex-grow: 1;
+
+        display: flex;
+        flex-direction: column;
+        width: 33%;
+
+        .contact-pnl__header{
+          flex-grow: 0;
+
+          font-family: FjallaOne;
+          font-size: 2.1rem;
+          text-transform: uppercase;
+          font-weight: bold;
+          padding-bottom: 25px;
+          letter-spacing: 1px;
+        }
+
+        .contact-pnl__item{
+          display: flex;
+          border-top: 1px solid grey;
+          padding: 25px 70px 30px 0px;
+
+          .item__img{
+            padding-top: 5px;
+          }
+
+          .empty-pnl{
+            width: 22px;
+            min-width: 22px;
+            flex-grow: 0;
+          }
+
+          .item__avatar{
+            flex-grow: 0;
+            width: 70px;
+            align-self: stretch;
+          }
+
+          .item_img img{
+            padding-top: 3px;
+          }
+
+          .item__info{
+
+            .item__info-header{
+              font-family: Lato;
+              font-size: 1.6rem;
+              color: red;
+              font-weight: bold;
+            }
+
+            .item__info-text{
+              font-size: 1.4rem;
+              color: #767c7e;
+              letter-spacing: 0.6px;
+              line-height: 1.7;
+            }
+          }
+        }
+      }
+
     }
   }
 }
